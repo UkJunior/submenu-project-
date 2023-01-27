@@ -1,19 +1,21 @@
 import react from "react";
-import logo from "./image/logo.png";
+import logo from './image/logo.png'
 import { FaBars } from "react-icons/fa";
+import { useGlobalContext } from "./context";
 
 const Navbar = () => {
+  const { closeSubmenu, openSubmenu, openSidebar } = useGlobalContext()
 
-    const displaySubmenu = (event) =>{
-     const page = event.target.textContent;
-     const tempBtn = event.target.getBoundingClientRect();
+    const displaySubmenu = (e) =>{
+     const page = e.target.textContent;
+     const tempBtn = e.target.getBoundingClientRect();
      const center = (tempBtn.left + tempBtn.right) / 2;
      const bottom = tempBtn.bottom - 3;
      openSubmenu(page, { center, bottom });
     }
 
-    const handleSubmenu = (event) => {
-        if(!event.target.classList.contains('link-btn')) {
+    const handleSubmenu = (e) => {
+        if(!e.target.classList.contains('link-btn')) {
             closeSubmenu();
         }
     };
@@ -21,7 +23,8 @@ const Navbar = () => {
   return (
     <nav className="nav" onMouseOver={handleSubmenu}>
       <div className="nav-center">
-        <img src={logo} alt="log" className="nav-logo" />
+      <div className="nav-header">
+      <img src={logo} alt="" style={{width: 50}} />
         <button className="btn toggle-btn" onClick={openSidebar}>
           <FaBars />
         </button>
@@ -29,17 +32,18 @@ const Navbar = () => {
       <ul className="nav-links">
         <li>
           <button className="link-btn" onMouseOver={displaySubmenu}>
-            products
+            menu
           </button>
         </li>
         <li>
           <button className="link-btn" onMouseOver={displaySubmenu}>contacts</button>
         </li>
         <li>
-        <button className="link-btn" onMouseOver={displaySubmenu}>address</button>
+        <button className="link-btn" onMouseOver={displaySubmenu}>gallery</button>
         </li>
       </ul>
-      <button className="btn sigin-btn">sign in</button>
+      <button className="btn signin-btn">sign in</button>
+      </div>
     </nav>
   );
 };

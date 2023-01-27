@@ -3,28 +3,28 @@ import react from 'react'
 
 const sublinks = [
     {
-        page: 'products',
+        page: 'menu',
         links: [
-            { label: 'payment', icon: <FaCreditCard />, url: '/products' },
-            { label: 'terminal', icon: <FaCreditCard />, url: '/products' },
+            { label: 'prices', icon: <FaCreditCard />, url: '/products' },
+            { label: 'pictures', icon: <FaCreditCard />, url: '/products' },
             {
-                label: 'connect', icon: <FaCreditCard />, url: '/products'
-            }
+                label: 'items', icon: <FaCreditCard />, url: '/products'
+            },
 
         ],
     },
     {
-        page: 'developers',
+        page: 'contacts',
         links: [
             {
-                label: 'plugins', icon: <FaBook />, url:
+                label: 'phone', icon: <FaBook />, url:
                     '/products'
             },
             {
-                label: 'libraries', icon: <FaBook />, url: '/products'
+                label: 'email address', icon: <FaBook />, url: '/products'
             },
             {
-                label: 'help', icon: <FaBook />, url: '/products'
+                label: 'social links', icon: <FaBook />, url: '/products'
             },
             {
                 label: 'billing', icon: <FaBook />, url: '/products'
@@ -32,7 +32,7 @@ const sublinks = [
         ],
     },
     {
-        page: 'company',
+        page: 'gallery',
         links: [
             {
                 label: 'about',
@@ -40,7 +40,7 @@ const sublinks = [
                 url: '/products'
             },
             {
-                label: 'customer', icon: <FaBriefcase />, url: '/products'
+                label: 'customer reviews', icon: <FaBriefcase />, url: '/products'
             },
         ],
     },
